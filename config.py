@@ -1,0 +1,5 @@
+MYSQL_HOST = 'localhost'
+MYSQL_USER = 'root'
+MYSQL_PASSWORD = 'root123'
+MYSQL_DB = 'placement_system'
+SECRET_KEY = 'your_secret_key' 

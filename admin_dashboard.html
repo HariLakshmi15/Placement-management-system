@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <div class="card shadow rounded p-4 mt-4" style="background: #f8f9fa;">
+      <a href="{{ url_for('home') }}" class="btn btn-pastel-teal mb-2">Main Dashboard</a>
+      <h2 class="text-center mb-4">Welcome, {{ admin_name }} (Admin)</h2>
+      <p class="text-center">This is the admin dashboard.</p>
+      <div class="d-grid gap-2">
+        <a href="{{ url_for('add_company') }}" class="btn btn-pastel-mint mb-3">Post Jobs</a>
+        <a href="{{ url_for('admin_applications') }}" class="btn btn-pastel-coral mb-3">View Applications</a>
+        <a href="{{ url_for('admin_database') }}" class="btn btn-pastel-gray mb-3">View Database</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} 

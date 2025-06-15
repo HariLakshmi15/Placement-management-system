@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{{ url_for('admin_database') }}" class="btn btn-outline-dark mb-2">Back to Database</a>
+<h2>Edit Company</h2>
+<form method="POST">
+    <input type="text" name="name" value="{{ company[1] }}" class="form-control mb-2" required>
+    <input type="text" name="role" value="{{ company[2] }}" class="form-control mb-2" required>
+    <input type="text" name="ctc" value="{{ company[3] }}" class="form-control mb-2" required>
+    <input type="number" step="0.01" name="eligibility_cgpa" value="{{ company[4] }}" class="form-control mb-2" required>
+    <input type="text" name="eligibility_branch" value="{{ company[5] }}" class="form-control mb-2" required>
+    <input type="date" name="placement_date" value="{{ company[6] }}" class="form-control mb-2" required>
+    <button type="submit" class="btn btn-success">Update Company</button>
+</form>
+{% endblock %} 

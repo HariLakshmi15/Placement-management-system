@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Student Login</h2>
+<form method="POST">
+    <input type="email" name="email" placeholder="Email" class="form-control mb-2" required>
+    <input type="password" name="password" placeholder="Password" class="form-control mb-2" required>
+    <button type="submit" class="btn btn-primary">Login</button>
+    <a href="{{ url_for('register') }}" class="btn btn-link">Register</a>
+</form>
+<a href="{{ url_for('admin_login') }}" class="btn btn-link">Admin Login</a>
+{% endblock %} 

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <div class="card shadow rounded p-4 mt-4 text-center" style="background: #f8f9fa;">
+      <h2 class="mb-4">Welcome to Placement Matrix</h2>
+      <p class="mb-4">Please choose your login type:</p>
+      <div class="d-grid gap-2">
+        <a href="{{ url_for('student_login') }}" class="btn btn-pastel-blue mb-2">Student Login</a>
+        <a href="{{ url_for('admin_login') }}" class="btn btn-pastel-purple mb-2">Admin Login</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} 

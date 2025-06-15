@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <div class="card shadow rounded p-4 mt-4" style="background: #f8f9fa;">
+      <a href="{{ url_for('home') }}" class="btn btn-pastel-teal mb-2">Main Dashboard</a>
+      <h2 class="text-center mb-4">Welcome, {{ name }}!</h2>
+      <p class="text-center">This is your dashboard.</p>
+      <div class="d-grid gap-2">
+        <a href="{{ url_for('companies') }}" class="btn btn-pastel-green mb-2">Apply for Companies</a>
+        <a href="{{ url_for('my_applications') }}" class="btn btn-pastel-yellow mb-2">My Applications</a>
+        <a href="{{ url_for('profile') }}" class="btn btn-pastel-orange mb-2">View/Edit Profile</a>
+        <a href="{{ url_for('logout') }}" class="btn btn-pastel-pink mb-2">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} 

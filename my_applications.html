@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-10 col-lg-8">
+    <div class="card shadow rounded p-4 mt-4" style="background: #f8f9fa;">
+      <a href="{{ url_for('home') }}" class="btn btn-outline-primary mb-2">Main Dashboard</a>
+      <a href="{{ url_for('dashboard') }}" class="btn btn-outline-dark mb-2">Student Dashboard</a>
+      <h2 class="text-center mb-4">My Applications</h2>
+      <table class="table table-bordered bg-white">
+          <tr>
+              <th>Company Name</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Applied Date</th>
+          </tr>
+          {% for a in applications %}
+          <tr>
+              <td>{{ a[0] }}</td>
+              <td>{{ a[1] }}</td>
+              <td>{{ a[2] }}</td>
+              <td>{{ a[3] }}</td>
+          </tr>
+          {% endfor %}
+      </table>
+      <a href="{{ url_for('companies') }}" class="btn btn-secondary">Back to Companies</a>
+    </div>
+  </div>
+</div>
+{% endblock %} 

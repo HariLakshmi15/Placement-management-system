@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-10 col-lg-8">
+    <div class="card shadow rounded p-4 mt-4" style="background: #f8f9fa;">
+      <a href="{{ url_for('home') }}" class="btn btn-pastel-teal mb-2">Main Dashboard</a>
+      <a href="{{ url_for('dashboard') }}" class="btn btn-outline-dark mb-2">Student Dashboard</a>
+      <h2 class="text-center mb-4">Apply for Companies</h2>
+      <table class="table table-bordered bg-white">
+          <tr>
+              <th>Name</th>
+              <th>Role</th>
+              <th>CTC</th>
+              <th>Eligibility CGPA</th>
+              <th>Eligibility Branch</th>
+              <th>Placement Date</th>
+              <th>Action</th>
+          </tr>
+          {% for c in companies %}
+          <tr>
+              <td>{{ c[1] }}</td>
+              <td>{{ c[2] }}</td>
+              <td>{{ c[3] }}</td>
+              <td>{{ c[4] }}</td>
+              <td>{{ c[5] }}</td>
+              <td>{{ c[6] }}</td>
+              <td>
+                {% if student_cgpa < c[4] %}
+                  <span class="badge bg-danger">Not Eligible</span>
+                {% else %}
+                  <a href="{{ url_for('apply', company_id=c[0]) }}" class="btn btn-pastel-green btn-sm">Apply</a>
+                {% endif %}
+              </td>
+          </tr>
+          {% endfor %}
+      </table>
+      <a href="{{ url_for('my_applications') }}" class="btn btn-pastel-yellow">My Applications</a>
+    </div>
+  </div>
+</div>
+{% endblock %} 

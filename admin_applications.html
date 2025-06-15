@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{{ url_for('home') }}" class="btn btn-outline-primary mb-2">Main Dashboard</a>
+<a href="{{ url_for('admin_dashboard') }}" class="btn btn-outline-dark mb-2">Admin Dashboard</a>
+<h2>All Applications</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Application ID</th>
+        <th>Student Name</th>
+        <th>Company Name</th>
+        <th>Status</th>
+        <th>Applied Date</th>
+        <th>Update Status</th>
+    </tr>
+    {% for a in applications %}
+    <tr>
+        <td>{{ a[0] }}</td>
+        <td>{{ a[1] }}</td>
+        <td>{{ a[2] }}</td>
+        <td>{{ a[3] }}</td>
+        <td>{{ a[4] }}</td>
+        <td>
+            <form method="POST" action="{{ url_for('update_status', application_id=a[0]) }}">
+                <select name="status" class="form-select form-select-sm d-inline w-auto">
+                    <option value="Applied" {% if a[3] == 'Applied' %}selected{% endif %}>Applied</option>
+                    <option value="Eligible" {% if a[3] == 'Eligible' %}selected{% endif %}>Eligible</option>
+                    <option value="Selected" {% if a[3] == 'Selected' %}selected{% endif %}>Selected</option>
+                    <option value="Rejected" {% if a[3] == 'Rejected' %}selected{% endif %}>Rejected</option>
+                </select>
+                <button type="submit" class="btn btn-sm btn-primary">Update</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %} 

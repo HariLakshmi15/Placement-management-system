@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Placement Matrix</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+      body {
+        background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+        min-height: 100vh;
+      }
+      .btn-pastel-blue    { background: #a3c9f9; color: #234567; border: none; }
+      .btn-pastel-purple  { background: #c3aed6; color: #4b3869; border: none; }
+      .btn-pastel-green   { background: #b8e0d2; color: #22543d; border: none; }
+      .btn-pastel-yellow  { background: #fff5ba; color: #b59f3b; border: none; }
+      .btn-pastel-orange  { background: #ffd6a5; color: #b76e22; border: none; }
+      .btn-pastel-pink    { background: #ffb3c6; color: #a23e48; border: none; }
+      .btn-pastel-teal    { background: #b5ead7; color: #22796b; border: none; }
+      .btn-pastel-lavender{ background: #e0bbf3; color: #6d4a8a; border: none; }
+      .btn-pastel-mint    { background: #d4f8e8; color: #2e8b57; border: none; }
+      .btn-pastel-coral   { background: #ffdac1; color: #b76e22; border: none; }
+      .btn-pastel-gray    { background: #e2e2e2; color: #333; border: none; }
+      .btn-pastel-blue:hover, .btn-pastel-purple:hover, .btn-pastel-green:hover,
+      .btn-pastel-yellow:hover, .btn-pastel-orange:hover, .btn-pastel-pink:hover,
+      .btn-pastel-teal:hover, .btn-pastel-lavender:hover, .btn-pastel-mint:hover,
+      .btn-pastel-coral:hover, .btn-pastel-gray:hover {
+        filter: brightness(0.95);
+        color: #222;
+      }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html> 

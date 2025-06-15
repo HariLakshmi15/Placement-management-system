@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{{ url_for('home') }}" class="btn btn-outline-primary mb-2">Main Dashboard</a>
+<a href="{{ url_for('admin_dashboard') }}" class="btn btn-outline-dark mb-2">Admin Dashboard</a>
+<h2>All Students</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th><th>Name</th><th>Email</th><th>Roll Number</th><th>Branch</th><th>CGPA</th>
+    </tr>
+    {% for s in students %}
+    <tr>
+        <td>{{ s[0] }}</td><td>{{ s[1] }}</td><td>{{ s[2] }}</td><td>{{ s[3] }}</td><td>{{ s[4] }}</td><td>{{ s[5] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<h2>All Companies</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th><th>Name</th><th>Role</th><th>CTC</th><th>Eligibility CGPA</th><th>Eligibility Branch</th><th>Placement Date</th><th>Edit</th>
+    </tr>
+    {% for c in companies %}
+    <tr>
+        <td>{{ c[0] }}</td><td>{{ c[1] }}</td><td>{{ c[2] }}</td><td>{{ c[3] }}</td><td>{{ c[4] }}</td><td>{{ c[5] }}</td><td>{{ c[6] }}</td>
+        <td><a href="{{ url_for('edit_company', company_id=c[0]) }}" class="btn btn-sm btn-warning">Edit</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<h2>All Applications</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Application ID</th><th>Student Name</th><th>Company Name</th><th>Status</th><th>Applied Date</th>
+    </tr>
+    {% for a in applications %}
+    <tr>
+        <td>{{ a[0] }}</td><td>{{ a[1] }}</td><td>{{ a[2] }}</td><td>{{ a[3] }}</td><td>{{ a[4] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %} 
