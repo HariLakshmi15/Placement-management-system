@@ -16,7 +16,7 @@ A web-based application to streamline the campus placement process for colleges 
 
 - **Backend**: Python (Flask)
 - **Frontend**: HTML, CSS
-- **Database**: SQLite (or extendable to MySQL/PostgreSQL)
+- **Database**: MySQL
 
 
 ## ▶️ Demo
