@@ -35,3 +35,8 @@ python app.py
 Visit http://localhost:5000 in your browser.
 
 Update full README for open-source use
+
+## 🤝 Contributions Welcome!
+
+Want to improve this project? Check the `CONTRIBUTING.md` file and open a pull request!
+
