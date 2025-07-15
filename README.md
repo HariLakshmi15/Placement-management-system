@@ -21,7 +21,7 @@ A web-based application to streamline the campus placement process for colleges 
 
 ## ▶️ Demo
 
-Watch the demo here: [Click to view](https://drive.google.com/file/d/18DaxC19SmUd5tZ9OOTv--3HU1oCX0rtJ/view?usp=sharing)
+Watch the demo here: [Click to view](https://drive.google.com/file/d/18DaxC19SmUd5tZ9O0Tv--3HU1oCX0rtJ/view?usp=drive_link)
 
 
 ## 🚀 How to Run Locally
